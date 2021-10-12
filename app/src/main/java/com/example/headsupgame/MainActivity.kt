@@ -61,9 +61,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         CoroutineScope(Dispatchers.IO).launch {
-            getCelebritiesList(onResult = {
-            })
+            getCelebritiesList(onResult = { })
         }
+        val svc = Intent(this, BackgroundSoundService::class.java)
+        startService(svc)
     }
 
     private fun getCelebritiesList(onResult: () -> Unit) {

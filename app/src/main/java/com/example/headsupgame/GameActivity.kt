@@ -21,6 +21,10 @@ import com.google.gson.reflect.TypeToken
 
 import com.google.gson.Gson
 import java.lang.reflect.Type
+import android.content.Intent
+
+
+
 
 
 class GameActivity : AppCompatActivity() {
@@ -41,10 +45,6 @@ class GameActivity : AppCompatActivity() {
     var round = 0
 
     var startGameFlag = false
-//    private var startGameFlag by Delegates.observable(false) { _, oldValue, newValue ->
-//        Log.d("HELP", "the value is: $newValue")
-////        startGame()
-//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,11 +76,6 @@ class GameActivity : AppCompatActivity() {
         taboo3TextView = findViewById<TextView>(R.id.tv_taboo3)
 
         setUI()
-        val maxVolume = 100.0f
-        val currentVolume = 40.0f
-        val bgMusicMediaPlayer: MediaPlayer = MediaPlayer.create(applicationContext, R.raw.bg_music)
-        bgMusicMediaPlayer.setVolume(currentVolume/maxVolume,currentVolume/maxVolume)
-        bgMusicMediaPlayer.start()
     }
 
     private fun startGame() {
@@ -143,8 +138,13 @@ class GameActivity : AppCompatActivity() {
 
 
     private fun startTimer() {
-        val tickSoundMediaPlayer: MediaPlayer = MediaPlayer.create(applicationContext, R.raw.human_tick)
-        val winSoundMediaPlayer: MediaPlayer = MediaPlayer.create(applicationContext, R.raw.win)
+//        val maxVolume = 100.0f
+//        val currentVolume = 40.0f
+//        val bgMusicMediaPlayer: MediaPlayer = MediaPlayer.create(this, R.raw.bg_music)
+//        bgMusicMediaPlayer.setVolume(currentVolume/maxVolume,currentVolume/maxVolume)
+//        bgMusicMediaPlayer.start()
+        val tickSoundMediaPlayer: MediaPlayer = MediaPlayer.create(this, R.raw.human_tick)
+        val winSoundMediaPlayer: MediaPlayer = MediaPlayer.create(this, R.raw.win)
         object : CountDownTimer(60000, 1000) {
 
             override fun onTick(millisUntilFinished: Long) {
@@ -189,6 +189,7 @@ class GameActivity : AppCompatActivity() {
             }
         }
         returnButton.setOnClickListener {
+
             finish()
         }
         playAgainButton.setOnClickListener {
