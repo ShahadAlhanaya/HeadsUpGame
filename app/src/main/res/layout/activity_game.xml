@@ -4,29 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/cl_gameActivity"
+    android:background="@drawable/bg_portrait_game_activity"
     tools:context=".GameActivity">
-
-<!--    <LinearLayout-->
-<!--        android:id="@+id/ll_progressBar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:gravity="center"-->
-<!--        android:visibility="visible"-->
-<!--        android:orientation="vertical">-->
-
-<!--        <ProgressBar-->
-<!--            android:id="@+id/progressBar"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/progressBarText"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="loading..."-->
-<!--            android:textAlignment="center"-->
-<!--            android:textColor="@color/design_default_color_secondary" />-->
-<!--    </LinearLayout>-->
 
     <LinearLayout
         android:id="@+id/ll_gameLandScape"
@@ -34,55 +14,87 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:visibility="visible"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/tv_timer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/purple_200"
-            android:padding="10dp"
-            android:textSize="30dp"
-            android:text="59" />
-
-        <TextView
-            android:id="@+id/tv_celebrityName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:text="Name" />
-
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/bg_timer2"
+                />
+            <TextView
+                android:id="@+id/tv_timerLandscape"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:textColor="@color/purple_500"
+                android:text="59" />
+
+        </FrameLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="250dp"
+            android:background="@drawable/ic_card"
             android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_celebrityName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="40dp"
+                android:padding="11dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/purple_700"
+                android:text="Name" />
 
             <TextView
                 android:id="@+id/tv_taboo1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/pink_200"
+                android:textSize="20dp"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/tv_taboo2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/pink_200"
+
+                android:textSize="20dp"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/tv_taboo3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/pink_200"
+
+                android:textSize="20dp"
                 android:text="TextView" />
         </LinearLayout>
     </LinearLayout>
@@ -91,7 +103,7 @@
         android:id="@+id/ll_gamePortrait"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -99,12 +111,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:src="@drawable/bg_timer"
+                />
+            <TextView
+                android:id="@+id/tv_timerPortrait"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:textAlignment="center"
+                android:textColor="@color/purple_500"
+                android:text="" />
 
+        </FrameLayout>
         <TextView
             android:id="@+id/tv_flipYourPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Flip Your Phone" />
+            android:textSize="30dp"
+            android:layout_weight="10"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="Rotate Your Phone" />
     </LinearLayout>
 
 
