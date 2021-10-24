@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_portrait_game_activity"
+    tools:context=".AddCelebritiesActivity">
+
+    <ImageButton
+        android:id="@+id/btn_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_round_close_24"
+        android:layout_margin="20dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_addCelebrity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/fredokaone_regular"
+            android:text="Add Celebrity"
+            android:textColor="@color/yellow"
+            android:textSize="30dp" />
+
+        <EditText
+            android:id="@+id/edt_celebrityName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_field"
+            android:padding="10dp"
+            android:ems="10"
+            android:textColor="@color/blue"
+            android:layout_marginVertical="10dp"
+            android:textColorHint="#B5AEA8"
+            android:inputType="textPersonName"
+            android:hint="Name" />
+
+        <EditText
+            android:id="@+id/edt_celebrityTaboo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_field"
+            android:padding="10dp"
+            android:ems="10"
+            android:textColor="@color/blue"
+            android:layout_marginVertical="10dp"
+            android:inputType="textPersonName"
+            android:textColorHint="#B5AEA8"
+            android:hint="First taboo" />
+
+        <EditText
+            android:id="@+id/edt_celebrityTaboo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_field"
+            android:padding="10dp"
+            android:ems="10"
+            android:textColor="@color/blue"
+            android:layout_marginVertical="10dp"
+            android:inputType="textPersonName"
+            android:textColorHint="#B5AEA8"
+            android:hint="Second taboo" />
+
+        <EditText
+            android:id="@+id/edt_celebrityTaboo3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_field"
+            android:padding="10dp"
+            android:ems="10"
+            android:textColor="@color/blue"
+            android:textColorHint="#B5AEA8"
+            android:layout_marginVertical="10dp"
+            android:inputType="textPersonName"
+            android:hint="Third taboo" />
+        <FrameLayout
+            android:id="@+id/fl_addCelebrity"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btn_addCelebrity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/playbutton"
+                android:text="Start" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/fredokaone_regular"
+                android:text="Add"
+                android:textAlignment="center"
+                android:textColor="@color/purple_500"
+                android:textSize="30dp" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

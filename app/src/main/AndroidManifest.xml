@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.headsupgame">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -10,12 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HeadsUpGame">
-        <service android:enabled="true" android:name=".BackgroundSoundService" />
+        <activity
+            android:name=".AddCelebritiesActivity"
+            android:exported="true" />
+
+        <service
+            android:name=".BackgroundSoundService"
+            android:enabled="true" />
+
         <activity
             android:name=".GameActivity"
-            android:exported="true"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-            />
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

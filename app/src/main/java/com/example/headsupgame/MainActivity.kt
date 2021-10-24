@@ -23,17 +23,11 @@ import android.media.AudioManager
 import android.media.SoundPool
 import android.media.MediaPlayer
 
-
-
-
-
-
-
-
 class MainActivity : AppCompatActivity() {
 
     var celebritiesList = arrayListOf<Celebrities.Celebrity>()
     lateinit var startButton: ImageButton
+    lateinit var addMoreButton: ImageButton
     lateinit var mainActivityLinearLayout: ConstraintLayout
     lateinit var startButtonFrameLayout: FrameLayout
 
@@ -52,12 +46,17 @@ class MainActivity : AppCompatActivity() {
         startButtonFrameLayout = findViewById(R.id.fl_startButton)
         setUI()
         startButton = findViewById(R.id.btn_start)
+        addMoreButton = findViewById(R.id.btn_addMore)
         startButtonFrameLayout.visibility = View.INVISIBLE
         startButton.setOnClickListener {
             val gson = Gson()
             val jsonCelebritiesList: String = gson.toJson(celebritiesList)
             val intent = Intent(this, GameActivity::class.java)
             intent.putExtra("celebritiesList", jsonCelebritiesList)
+            startActivity(intent)
+        }
+        addMoreButton.setOnClickListener {
+            val intent = Intent(this, AddCelebritiesActivity::class.java)
             startActivity(intent)
         }
         CoroutineScope(Dispatchers.IO).launch {
