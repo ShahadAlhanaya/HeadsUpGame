@@ -22,6 +22,7 @@ import android.media.AudioManager
 
 import android.media.SoundPool
 import android.media.MediaPlayer
+import com.example.headsupgame.database.DBHelper
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var addMoreButton: ImageButton
     lateinit var mainActivityLinearLayout: ConstraintLayout
     lateinit var startButtonFrameLayout: FrameLayout
+    lateinit var databaseHelper: DBHelper
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,9 +61,15 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, AddCelebritiesActivity::class.java)
             startActivity(intent)
         }
-        CoroutineScope(Dispatchers.IO).launch {
-            getCelebritiesList(onResult = { })
-        }
+
+        databaseHelper = DBHelper(applicationContext)
+        celebritiesList = databaseHelper.retrieveCelebrities()
+        startButtonFrameLayout.visibility = View.VISIBLE
+
+
+//        CoroutineScope(Dispatchers.IO).launch {
+//            getCelebritiesList(onResult = { })
+//        }
         val svc = Intent(this, BackgroundSoundService::class.java)
         startService(svc)
     }
